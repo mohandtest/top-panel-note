@@ -1,6 +1,6 @@
 # EasyNotes
 
-A minimal GNOME panel notebook by mohandtest. Named tabs, a multiline editor,
+A minimal GNOME panel notebook. Named tabs, a multiline editor,
 Markdown preview, and a resizable popup that remembers its size.
 
 ## Install
