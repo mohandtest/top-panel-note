@@ -1,17 +1,8 @@
 {
-  "uuid": "topPanelNote@sainathmurali.github.io",
-  "name": "Top Panel Note",
-  "description": "A GNOME extension to display static notes in the top panel.",
-  "shell-version": [
-    "45",
-    "46",
-    "47",
-    "48",
-    "49",
-    "50"
-  ],
-  "url": "https://github.com/sainathmurali/top-panel-note.git",
-  "donations": {
-    "buymeacoffee": "bionichuman"
-  }
+  "uuid": "easynotes@mohandtest",
+  "name": "EasyNotes",
+  "description": "A minimal panel notebook with named tabs and Markdown preview.",
+  "shell-version": ["45", "46", "47", "48", "49", "50", "51"],
+  "url": "https://github.com/mohandtest/top-panel-note",
+  "version": 2
 }

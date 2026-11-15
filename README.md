@@ -1,93 +1,40 @@
-# Top Panel Note Extension
+# EasyNotes
 
-<p align="center">
-  <a href="https://github.com/sainathmurali/top-panel-note/stargazers">
-    <img src="https://img.shields.io/github/stars/sainathmurali/top-panel-note?style=flat-square&logo=github" alt="GitHub Stars">
-  </a>
-  <a href="https://github.com/sainathmurali/top-panel-note/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/sainathmurali/top-panel-note?style=flat-square" alt="License">
-  </a>
-  <img src="https://img.shields.io/badge/GNOME_Shell-45%2B-4A86CF?style=flat-square&logo=gnome&logoColor=white" alt="GNOME Shell">
-  <img src="https://img.shields.io/badge/status-active-success?style=flat-square" alt="Status">
-</p>
+A minimal GNOME panel notebook by mohandtest. Named tabs, a multiline editor,
+Markdown preview, and a resizable popup that remembers its size.
 
-> A simple GNOME Shell extension that lets you quickly add, view, and access a static note directly from your top panel.
+## Install
 
-## ✨ Features
+GNOME Shell 45–51 is declared supported; development targets GNOME 51.
 
-- Quickly add and edit notes from the GNOME Shell top panel.
-- Keep reminders, lookup tables, commands, or other useful snippets easily accessible.
-- Resize the note window to suit your content.
-- Persistent note storage between sessions.
-
-## Prerequisites
-
-- GNOME Shell **45 or later**
-
-## Installation
-
-### From GNOME Extensions
-
-1. Visit the [Top Panel Note Extension page](https://extensions.gnome.org/extension/7120/top-panel-note/).
-2. Turn on the extension to install and enable it.
-
-## Usage
-
-### ➕ Adding a Note
-
-1. Click the extension icon in the top panel.
-2. Enter your note in the window that appears.
-3. Your note will be available directly from the top panel.
-
-### ✏️ Editing a Note
-
-1. Click the extension icon.
-2. Edit your existing note.
-
-### ↔️ Resizing the Window
-
-Click and drag the empty space to the right of the scrollbar to resize the note window.
-
-### 💡 Formatting Tip
-
-If you want more control over the formatting of your note, you can directly edit:
-
-```text
-~/.cache/top_panel_note_cache.txt
-````
-
-After editing the file, restart GNOME Shell for the changes to take effect.
-
-For X11 sessions:
-
-```text
-Alt + F2 → r → Enter
+```sh
+gnome-extensions pack --force --extra-source=state.js --extra-source=markdown.js .
+gnome-extensions install --force easynotes@mohandtest.shell-extension.zip
+gnome-extensions enable easynotes@mohandtest
 ```
 
-> **Note:** This restart method does not work on Wayland sessions. Logging out and back in, or restarting the extension, may be required.
+If GNOME has not discovered the new extension, log out and back in, then enable it.
+On Wayland, updated JavaScript may also require a new login to take effect.
 
-## ☕ Support the Project
+## Use
 
-If you find **Top Panel Note** useful, consider supporting its development:
+Click the panel icon to open your notes. Enter inserts a newline; Escape closes
+the popup. Changes save automatically.
 
-<p>
-  <a href="https://buymeacoffee.com/bionichuman">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support%20development-FFDD00?style=flat-square&logo=buymeacoffee&logoColor=black" alt="Buy Me a Coffee">
-  </a>
-</p>
+Use **+** to add a tab. Double-click a tab to rename it, or use **…** for rename
+and delete. Scroll the tab strip when it overflows. Drag either bottom corner
+to resize the popup; use the left corner to widen it from the screen's right edge.
 
-Your support helps maintain the extension and fund future improvements.
+**Preview** renders headings, bold, italic, lists, code, and HTTP/HTTPS links.
+**Edit** returns to the original text. Raw HTML is displayed as text.
 
-## 🤝 Contributing
+Notes and popup size are stored in `~/.local/share/easynotes/state.json`.
+The previous `~/.cache/top_panel_note_cache.txt` note is imported on first use
+and left intact. Back up the EasyNotes data file to keep a copy of your notes.
+The previous saved version is kept as `state.json~`. Damaged state files are
+preserved separately before recovery. Save errors show their cause with
+**Retry** and **Open Folder** actions; no separate permission grant is needed.
 
-Contributions are welcome! Feel free to open an issue, suggest a feature, or submit a pull request.
+Licensed under [GPL v3](LICENSE).
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-* The GNOME Shell community for its documentation and support.
-* The GTK Icon Library for the icons used in this extension.
-
+Fork based on [Top Panel Note](https://github.com/sainathmurali/top-panel-note).
